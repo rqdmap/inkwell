@@ -1,0 +1,47 @@
+<div class='front-matter'>
+  <!-- options: -->
+  {{ $enable := .Scratch.Get "front-matter-enable" }}
+
+  {{ if in $enable "create-time" }}
+	<time class='front-item front-matter-create-time' datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">  {{ .Date.Format "2006.01.02 15:04" }}</time>
+  {{ end }}
+
+  {{ if in $enable "modified-time" }}
+	<time class='front-item front-matter-lastmod-time' datetime="{{ .Date.Format "2006-01-02T15:04:05" }}">  {{ .Lastmod.Format "2006.01.02 15:04" }}</time>
+  {{ end }}
+
+  {{ if in $enable "categories" }}
+    {{ range .Params.categories }}
+    <a class='front-item' href="{{ "/categories/" | relLangURL }}{{ . | urlize }}">  {{ . }}</a>
+    {{ end }}
+  {{ end }}
+
+  {{ if in $enable "tags" }}
+    {{ range .Params.tags }}
+    <a class='front-item' href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">  {{ . }}</a>
+    {{ end }}
+  {{ end }}
+
+  {{ if in $enable "anime_tags" }}
+    {{ range .Params.anime_tags }}
+    <a class='front-item' href="{{ "/anime_tags/" | relLangURL }}{{ . | urlize }}">  {{ . }}</a>
+    {{ end }}
+  {{ end }}
+
+  {{ if in $enable "rate" }}
+    {{ range .Params.rate }}
+    <a class='front-item' href="{{ "/rate/" | relURL}}{{ . | urlize }}"> 󰅺 {{ . }}</a>
+    {{ end }}
+  {{ end }}
+
+  {{ if in $enable "wordcount" }}
+    <span class='front-item front-matter-wordcount'> 󰈭  {{ countwords .Content }}字 </span>
+  {{ end }}
+
+  {{ if in $enable "vistor" }}
+  <span id='page-statistics' class='hidden'>
+    <span class='front-item'> 󰩟 <span id='page-uv'>0</span>人 </span>
+    <span class='front-item'> 󰷊  <span id='page-pv'>0</span> 次 </span>l
+  </span>
+  {{ end }}
+</div>

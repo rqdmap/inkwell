@@ -1,0 +1,32 @@
+{{ $size := 12 }}
+{{ $isFold := "false" }}
+{{ $supportFold := "false" }}
+{{ $lineNumber := len (split .Inner "\n")}}
+{{ if gt $lineNumber 15 }}
+  {{ $supportFold = "true" }}
+  {{ if eq true (index .Attributes "fold") }}
+    {{ $isFold = "true" }}
+  {{ end }}
+{{ end }}
+<div class="codeblock" id='codeblock-{{ .Ordinal }}'>
+<div class="codetype"> 
+  {{ if .Type }}
+    {{ .Type }}
+  {{ else }}
+    Text
+  {{ end }}
+</div>
+<div class='codeblock-tool-container'>
+<button class='codeblock-tool copy-button' onclick="copyCode('codeblock-{{ .Ordinal }}')">  </button>
+<button class='codeblock-tool check-button codeblock-tool-hidden'> 󰄬 </button>
+</div>
+<div
+{{- if eq "true" $supportFold }}
+{{- if eq "true" $isFold }} class="codeblock-fold" 
+{{ else }} class='codeblock-unfold' {{ end -}}
+onclick="toggleFold('codeblock-{{ .Ordinal }}')"
+{{ end -}}
+>
+{{ transform.Highlight .Inner .Type .Options }}
+</div>
+</div>
