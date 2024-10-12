@@ -34,8 +34,8 @@ function hit_and_query() {
       screen_height: info.screenHeight,
       referrer: document.referrer,
     };
-    fetch('http://127.0.0.1:1323/hit_and_query', {
-    // fetch('http://rqdmap.top:8088/hit_and_query', {
+    // fetch('http://127.0.0.1:1323/hit_and_query', {
+    fetch('https://api.rqdmap.top/hit_and_query', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
