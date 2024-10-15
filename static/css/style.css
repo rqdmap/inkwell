@@ -445,7 +445,7 @@ blockquote {
 }
 
 .cblock-gpt-logo::before {
-  content: "";
+  content: "󱙺";
 }
 
 /* .cblock-info { */
