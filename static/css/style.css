@@ -65,6 +65,10 @@ body {
   line-height: var(--line-height);
 }
 
+article {
+  line-height: var(--article-line-height);
+}
+
 
 /**
  * Homepage

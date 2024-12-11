@@ -5,6 +5,6 @@
   <!-- Pass front-matter-enable options to front-matter -->
   {{ partial "front-matter" . }}
 
-  {{ with .Content }}<div>{{ . }}</div>{{ end }}
+  {{ with .Content }}<article>{{ . }}</article>{{ end }}
 </div>
 {{ end }}
