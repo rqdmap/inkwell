@@ -667,14 +667,54 @@ table {
   margin-left: auto;
   margin-right: auto;
   border-collapse: collapse;
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
-
+  border: 1.5px solid #000000;    /* Deep black border around the entire table */
+  width: 85%;                   /* Setting a reasonable width for the centered table */
 }
 
+/* Style for all table cells and headers */
 th, td {
-  text-align: center;
-  padding: 5px 10px;
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid #ddd;  /* Horizontal line between rows */
+  border-left: 1px solid #ddd;    /* Vertical line between columns */
+  border-right: 1px solid #ddd;   /* Vertical line on right side of cells */
+}
+
+/* Header styling */
+thead th {
+  background-color: #f2f2f2;     /* Light gray background for header */
+  font-weight: bold;
+  border-bottom: 1.5px solid #999; /* Slightly darker border under headers */
+}
+
+tr:last-child td{
+    border-bottom: none;
+}
+
+/* Last column styling to ensure right border */
+tr td:last-child,
+tr th:last-child {
+  border-right: none;            /* Remove right border of cells to avoid double borders */
+}
+
+/* First column styling to ensure left border */
+tr td:first-child,
+tr th:first-child {
+  border-left: none;            /* Remove left border of cells to avoid double borders */
+}
+
+/* Alternating row background colors */
+tbody tr:nth-child(odd) {
+  background-color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;     /* Very light gray for alternating rows */
+}
+
+/* Hover effect for better row identification */
+tbody tr:hover {
+  background-color: #f0f0f0;     /* Slightly darker gray on hover */
 }
 
 /* git 修改记录 */
