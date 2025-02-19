@@ -53,6 +53,7 @@ img{
 }
 
 
+
 body {
   margin: 0;
   padding: 0;
@@ -67,6 +68,40 @@ body {
 
 article {
   line-height: var(--article-line-height);
+}
+
+
+/**
+ * Deep header
+ */
+/* LaTeX style */
+h5 {
+  font-size: 1em;
+  font-weight: bold;
+  
+  /* Layout settings */
+  display: inline-block;
+  width: auto;
+  margin-top: 1.5em; /* This will now work with inline-block */
+  margin-bottom: 0;
+  margin-left: 0;
+  text-indent: 0;
+  
+  /* Spacing that mimics LaTeX paragraph */
+  padding-right: 1em;
+}
+
+/* This makes the text following the h5 appear on the same line */
+h5 + p {
+  display: inline;
+}
+
+/* Force a line break after the paragraph content and ensure proper spacing */
+h5 + p:after {
+  content: "";
+  display: block;
+  margin-bottom: 1.5em; /* Increased for better paragraph separation */
+  line-height: 1.5; /* Explicitly set line height */
 }
 
 
