@@ -28,10 +28,10 @@ a:hover {
 
 
 object,
-img{
+img {
   max-width: 100%;
   margin-top: 12px;
-  border: 2px solid gray;
+  /* border: 2px solid gray; */
 }
 
 /* 图片模糊 */
@@ -423,7 +423,7 @@ main {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 1.75em;
  /*  margin-block-start: 0.4em; */
   /* margin-block-end: 0.4em; */
 }
