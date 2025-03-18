@@ -149,7 +149,7 @@ function createHeatmap(year) {
   data.forEach((day) => {
     const cell = document.createElement('div');
     cell.className = 'heatmap-cell';
-    cell.style.backgroundColor = getColor(day.value);
+    cell.style.backgroundColor = getColor(day.value, day.change_files);
     cell.dataset.title = day.title.join('\n');
     cell.dataset.value = day.value;
     cell.dataset.change_files = day.change_files;
@@ -203,7 +203,7 @@ function hideTooltip() {
   tooltip.style.opacity = '0';
 }
 
-function getColor(value) {
+function getColor(value, files) {
   const negativeColors = [
     '#ffcccc',
     '#ff9999',
@@ -220,7 +220,9 @@ function getColor(value) {
     '#216e39'
   ];
 
-  const base = 2000;
+  const base = 4000;
+
+  value += files;
 
   // if (value < 0) {
   //   value = Math.abs(value);
