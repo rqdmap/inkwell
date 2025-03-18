@@ -1,0 +1,6 @@
+<div align="center">
+  <object data="{{ .Get "src" }}" type="image/svg+xml" style="width:100%; max-width:{{ .Get "max-width" | default "600px" }};"></object>
+  <div class="img-caption">
+    {{ .Inner | safeHTML }}
+  </div>
+</div>

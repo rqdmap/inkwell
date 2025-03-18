@@ -1,0 +1,6 @@
+<div align="center">
+  <img src="{{ .Get "src" }}" style="width:100%; max-width:{{ .Get "max-width" | default "600px" }};">
+  <div class="img-caption">
+    {{ .Inner | safeHTML }}
+  </div>
+</div>
