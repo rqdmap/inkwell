@@ -43,14 +43,24 @@ img {
 }
 
 @font-face {
-  font-family: "Sarasa";
-  src: url('/fonts/SarasaMinimized.woff2');
+  font-family: "Sarasa Fixed Slab SC Nerd";
+  src: url('/fonts/SarasaFixedSlabSCNerdFont-Bold.woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap
+}
+
+@font-face {
+  font-family: "Sarasa Fixed Slab SC Nerd";
+  src: url('/fonts/SarasaFixedSlabSCNerdFont-Regular.woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap
 }
 
 * {
-  font-family: "Sarasa";
+  font-family: "Sarasa Fixed Slab SC Nerd";
 }
-
 
 
 body {
