@@ -1,3 +1,4 @@
+{{- if not .Params.disable_toc  -}}
 {{- $headers := findRE "<h[2-4].*?>(.|\n])+?</h[2-4]>" .Content -}}
 {{ .Scratch.Set "last_level" 1 }}
 {{- $has_headers := ge (len $headers) 1 -}}
@@ -28,4 +29,5 @@
 		{{- end -}}
 	{{- end -}}
 </div> </div>
+{{- end -}}
 {{- end -}}
