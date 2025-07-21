@@ -21,8 +21,8 @@ function parseCustomDate(dateString) {
 
 function loadInfo() {
   const pages = [];
-  {{ $gitinfo := "" }} 
-  {{ with resources.Get "gitlog.json" }} {{ $gitinfo = transform.Unmarshal . }} {{ end }} 
+  {{ $gitinfo := slice }}
+  {{ with resources.Get "gitlog.json" }} {{ $gitinfo = transform.Unmarshal . }} {{ end }}
   {{ range $gitinfo }}
     pages.push({
       date: parseCustomDate('{{ .date }}'),

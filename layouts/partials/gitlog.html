@@ -1,4 +1,4 @@
-{{ $gitlog_details := "" }} 
+{{ $gitlog_details := slice }}
 {{ with resources.Get "gitlog-details.json" }} {{ $gitlog_details = transform.Unmarshal . }} {{ end }} 
 {{ $id := .Params.id }}
 {{ $gitlog := slice }}
